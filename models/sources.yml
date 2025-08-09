@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: stackoverflow
+    database: western-avatar-467717-s6
+    schema: stackoverflow
+    tables:
+      - name: posts_questions
+      - name: posts_tag_wiki
