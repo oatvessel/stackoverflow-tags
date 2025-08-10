@@ -41,6 +41,8 @@ ranked_tag_growth as (
         rank() over (partition by tg.month order by tg.absolute_growth desc) as absolute_growth_rank,
         rank() over (partition by tg.month order by tg.growth_rate desc) as growth_rate_percent_rank
     from tag_growth tg
+    where
+        prev_month_count >= 100
 ),
 
 most_recent_month as (
